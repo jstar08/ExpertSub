@@ -14,7 +14,8 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class TvFragment : Fragment() {
 
-    private lateinit var binding: FragmentTvBinding
+    private var _binding : FragmentTvBinding ?= null
+    private val binding: FragmentTvBinding get() = _binding!!
     private val tvViewModel: TvViewModel by viewModel()
 
     override fun onCreateView(
@@ -22,7 +23,7 @@ class TvFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentTvBinding.inflate(layoutInflater)
+        _binding = FragmentTvBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -59,6 +60,11 @@ class TvFragment : Fragment() {
             binding.progressBar.visibility = View.GONE
             binding.rvMovie.visibility = View.VISIBLE
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 

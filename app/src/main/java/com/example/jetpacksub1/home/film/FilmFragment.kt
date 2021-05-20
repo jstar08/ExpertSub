@@ -13,7 +13,8 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class FilmFragment : Fragment() {
 
-    private lateinit var binding: FragmentFilmBinding
+    private var _binding : FragmentFilmBinding ?= null
+    private val binding: FragmentFilmBinding get() = _binding!!
     private val filmViewModel: FilmViewModel by viewModel()
 
     override fun onCreateView(
@@ -21,7 +22,7 @@ class FilmFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFilmBinding.inflate(layoutInflater)
+        _binding = FragmentFilmBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -59,6 +60,11 @@ class FilmFragment : Fragment() {
             binding.progressBar.visibility = View.GONE
             binding.rvMovie.visibility = View.VISIBLE
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

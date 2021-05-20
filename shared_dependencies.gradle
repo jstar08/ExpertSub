@@ -18,4 +18,5 @@ dependencies {
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
     androidTestImplementation 'androidx.annotation:annotation:1.1.0'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 }
