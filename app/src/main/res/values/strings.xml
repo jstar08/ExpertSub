@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">JetpackSub1</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tv">Tv Show</string>
+    <string name="user_image">user image</string>
+    <string name="imdb">IMDB</string>
+    <string name="title_activity_test">MainActivity</string>
+    <string name="titleformat">%s (%s)</string>
+    <string name="overview">overview</string>
+    <string name="movie_release_date">Release Date</string>
+    <string name="movie_cover">movie cover</string>
+    <string name="movie_status">movie status</string>
+    <string name="movie_overview">Overview</string>
+    <string name="action_back">back button</string>
+    <string name="movie_rating">rating</string>
+    <string name="season_format">Total Season : %s</string>
+    <string name="episode_format">Total Episode : %s</string>
+    <string name="movie_app">Movie App</string>
+    <string name="movie_Trailer">Trailer</string>
+    <string name="duration">%dh %dm</string>
+    <string name="rating_format">%.1f/10</string>
+    <string name="logo_category">logo category</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="favorite">favorite</string>
+    <string name="favorite_movie">Favorite Movie</string>
+    <string name="favorite_tv">Favorite Tv Show</string>
+</resources>

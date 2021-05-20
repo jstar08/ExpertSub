@@ -1,0 +1,276 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/abl_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true"
+        app:elevation="@dimen/no_space">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/ctl_detail"
+            android:layout_width="match_parent"
+            android:layout_height="266dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_backCoverDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:alpha="0.3"
+                    android:contentDescription="@string/movie_cover"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/poster_a_start_is_born" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_coverDetail"
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="@dimen/default_space"
+                    app:cardCornerRadius="@dimen/default_space"
+                    app:cardElevation="@dimen/no_space"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_coverDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/movie_cover"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/poster_a_start_is_born" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_titleDetail"
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_space"
+                    android:layout_marginEnd="@dimen/default_space"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/view_guideLineDetail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/cv_coverDetail"
+                    tools:text="Movie Title" />
+
+                <View
+                    android:id="@+id/view_guideLineDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_backCoverDetail" />
+
+                <TextView
+                    android:id="@+id/tv_genre"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="@dimen/no_space"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_space"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_titleDetail"
+                    app:layout_constraintTop_toBottomOf="@id/view_guideLineDetail"
+                    tools:text="Movie Genre" />
+
+                <TextView
+                    android:id="@+id/tv_ratingDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/cv_coverDetail"
+                    app:layout_constraintTop_toBottomOf="@id/tv_genre"
+                    tools:text="6.4/10" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_rating"
+                    android:layout_width="52dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/gold"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintStart_toEndOf="@id/tv_ratingDetail"
+                    app:layout_constraintTop_toBottomOf="@id/tv_genre">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/imdb"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_releaseDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toEndOf="@id/cv_coverDetail"
+                    app:layout_constraintTop_toBottomOf="@id/tv_ratingDetail"
+                    tools:text="27/05/2021(US)" />
+
+                <ImageView
+                    android:id="@+id/iv_category"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="@string/logo_category"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toEndOf="@id/tv_releaseDate"
+                    app:layout_constraintTop_toBottomOf="@id/tv_ratingDetail"
+                    tools:src="@drawable/ic_baseline_access_time_24" />
+
+                <TextView
+                    android:id="@+id/tv_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="8dp"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_releaseDate"
+                    app:layout_constraintTop_toBottomOf="@id/tv_ratingDetail"
+                    tools:text="2h 24m" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_detail"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <FrameLayout
+                    android:id="@+id/fl_actionBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_actionBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/action_back"
+                        android:src="@drawable/back"
+                        app:tint="@color/gray" />
+
+                </FrameLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_overviewTitleDetail"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_space"
+                android:layout_marginTop="@dimen/default_space"
+                android:ellipsize="end"
+                android:text="@string/movie_overview"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/black_transparent"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_overviewTitleDetail">
+
+                <TextView
+                    android:id="@+id/tv_overviewDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/overview"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_overviewTitleDetail"
+                    tools:text="this is my overview hola hola" />
+
+            </androidx.cardview.widget.CardView>
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/progressBar"
+                style="@style/SpinKitView.ChasingDots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="300dp"
+                android:foregroundGravity="center"
+                android:visibility="visible"
+                app:SpinKit_Color="@color/gold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_addFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/light_navy"
+        android:contentDescription="@string/favorite"
+        android:src="@drawable/favorite_border"
+        android:tint="@color/gold"
+        app:maxImageSize="24dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
