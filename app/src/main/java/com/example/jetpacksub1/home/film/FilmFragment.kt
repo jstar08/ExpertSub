@@ -13,7 +13,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class FilmFragment : Fragment() {
 
-    private var _binding : FragmentFilmBinding ?= null
+    private var _binding: FragmentFilmBinding? = null
     private val binding: FragmentFilmBinding get() = _binding!!
     private val filmViewModel: FilmViewModel by viewModel()
 

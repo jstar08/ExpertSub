@@ -14,7 +14,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class TvFragment : Fragment() {
 
-    private var _binding : FragmentTvBinding ?= null
+    private var _binding: FragmentTvBinding? = null
     private val binding: FragmentTvBinding get() = _binding!!
     private val tvViewModel: TvViewModel by viewModel()
 
